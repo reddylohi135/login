@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body { font-family: Arial; max-width: 300px; margin: 20px auto; }
+        nav { background: #333; padding: 10px; margin-bottom: 20px; }
+        nav a { color: white; text-decoration: none; margin-right: 10px; }
+        input { width: 100%; margin: 5px 0 15px; padding: 8px; }
+        button { background: green; color: white; border: none; padding: 10px; width: 100%; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </nav>
+    <h2>Login</h2>
+    <form>
+        <label>Username:</label>
+        <input type="text" required>
+        
+        <label>Password:</label>
+        <input type="password" required>
+        
+        <p><input type="checkbox" required> I agree to terms</p>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
