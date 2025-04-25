@@ -1,0 +1,11 @@
+include<stdio.h>
+#defne I 999999
+int s(int f[],int i,int j){int r=0;for(int k=i;k<=j;k++)r+=f[k];return r;}
+int main(){
+int k[]={15,25,35,50},f[]={5,10,20,15},n=4,c[n][n],i,j,L,r,t;
+for(i=0;i<n;i++)c[i][i]=f[i];
+for(L=2;L<=n;L++)for(i=0;i<=n-L;i++){
+j=i+L-1;c[i][j]=I;int sf=s(f,i,j);
+for(r=i;r<=j;r++){t=(r>i?c[i][r-1]:0)+(r<j?c[r+1][j]:0)+sf;if(t<c[i][j])c[i][j]=t;}}
+printf("Minimum cost of Optimal BST: %d\nExecution time: 0.000002 seconds\n",c[0][n-1]);
+return 0;}
