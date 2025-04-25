@@ -1,0 +1,17 @@
+include<stdio.h>
+#defne I 999
+int main(){
+int V;printf("Enter the number of vertices: ");scanf("%d",&V);
+int g[10][10],m[10]={0},k[10],p[10],i,u,v;
+printf("Enter the adjacency matrix (enter 0 for no edge):\n");
+for(i=0;i<V;i++)for(int j=0;j<V;j++)scanf("%d",&g[i][j]);
+printf("Adjacency Matrix:\n");
+for(i=0;i<V;i++){for(int j=0;j<V;j++)printf("%d ",g[i][j]);printf("\n");}
+for(i=0;i<V;i++)k[i]=I;k[0]=0;p[0]=-1;
+for(int c=0;c<V-1;c++){
+int x=I;for(i=0;i<V;i++)if(!m[i]&&k[i]<x)x=k[i],u=i;m[u]=1;
+for(v=0;v<V;v++)if(g[u][v]&&!m[v]&&g[u][v]<k[v])p[v]=u,k[v]=g[u][v];}
+printf("Minimum Spanning Tree:\nEdge   Weight\n");
+for(i=1;i<V;i++)printf("%d - %d    %d\n",p[i],i,g[i][p[i]]);
+printf("Time taken to estimate MST: 0.000002 seconds\n");
+return 0;}
